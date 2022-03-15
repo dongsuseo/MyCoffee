@@ -1,5 +1,17 @@
+import React from "react";
+import {
+  RecoilRoot
+} from "recoil";
+
+import Top from "./components/Top/Top";
+
 function App() {
-  return <div>Hello</div>;
+
+  return (
+    <RecoilRoot>
+      <Top />
+    </RecoilRoot>
+  );
 }
 
 export default App;
