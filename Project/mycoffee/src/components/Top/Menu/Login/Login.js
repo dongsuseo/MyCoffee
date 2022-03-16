@@ -1,22 +1,43 @@
-import React,{useState, useEffect} from "react";
+import React, { useState } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import Modal from "./LoginModal";
+import { EmailState, PasswordState, LogInState } from "../../../../atoms/atoms";
 
-const Login = ()=>{
-    const [login,setLogin] = useState(false);
+const Login = () => {
+  const [login, setLogin] = useRecoilState(LogInState);
+  const [isClicked, setIsClicked] = useState(false);
 
-    const LogInClickHandler = ()=>{
-        setLogin(true);
-    }
+  // const LogInClickHandler = () => {
+  //   setLogin((prev) => !prev);
+  // };
+  const ClickHandler = () => {
+    setIsClicked((prev) => !prev);
+  };
+  const Email = useRecoilValue(EmailState);
+  const Password = useRecoilValue(PasswordState);
 
-    useEffect(()=>{},[login]);
+  console.log(Email);
+  console.log(Password);
+  console.log(login);
 
-    return (
-      <div>
-        <button onClick={LogInClickHandler}>Login</button>
-        {login ? <Modal/>:<div/>}
-      </div>
-    );
-}
+  const ClickedHandler =  (click)=>{
+    setIsClicked(click);
+  }
+
+  return (
+    <div>
+      {login ? (
+        <div>
+          {`${Email}(님)..`}
+          <button onClick={setLogin(false)}>LogOut</button>
+        </div>
+      ) : (
+        <button onClick={ClickHandler}>Login</button>
+      )}
+      {isClicked ? <Modal isClicked={ClickedHandler}/> : <div/>}
+    </div>
+  );
+};
 
 export default Login;
