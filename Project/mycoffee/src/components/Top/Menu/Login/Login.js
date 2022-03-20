@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 import Modal from "./LoginModal";
-import { EmailState, PasswordState, LogInState } from "../../../../atoms/atoms";
+import {Link} from "react-router-dom";
+import { EmailState, LogInState } from "../../../../atoms/atoms";
 
 const Login = () => {
-  const [login, setLogin] = useRecoilState(LogInState);
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(LogInState);
   const [isClicked, setIsClicked] = useState(false);
 
   // const LogInClickHandler = () => {
@@ -15,11 +16,8 @@ const Login = () => {
     setIsClicked((prev) => !prev);
   };
   const Email = useRecoilValue(EmailState);
-  const Password = useRecoilValue(PasswordState);
 
-  console.log(Email);
-  console.log(Password);
-  console.log(login);
+  console.log(isLoggedIn);
 
   const ClickedHandler =  (click)=>{
     setIsClicked(click);
@@ -27,15 +25,16 @@ const Login = () => {
 
   return (
     <div>
-      {login ? (
+      {isLoggedIn ? (
         <div>
           {`${Email}(님)..`}
-          <button onClick={setLogin(false)}>LogOut</button>
+          <button onClick={setIsLoggedIn(false)}>LogOut</button>
         </div>
       ) : (
-        <button onClick={ClickHandler}>Login</button>
+        <Link to={"/login"}>
+          <button>Login</button>
+        </Link>
       )}
-      {isClicked ? <Modal isClicked={ClickedHandler}/> : <div/>}
     </div>
   );
 };

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import {useRecoilState, atom} from 'recoil';
 import{EmailState,PasswordState,LogInState} from '../../../../atoms/atoms'
+import {Link} from "react-router-dom";
 
-
-const LoginModal = (props) => {
+const LoginModal = () => {
   const [email, setEmail] = useRecoilState(EmailState);
   const [password, setPassword] = useRecoilState(PasswordState);
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(LogInState);
@@ -15,17 +15,19 @@ const LoginModal = (props) => {
   const PasswordHanlder = (e) => {
     setPassword(e.target.value);
   };
-
+ console.log(isLoggedIn);
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
     setIsLoggedIn(true);
-    props.isClicked = false;
     console.log(isLoggedIn);
   };
 
   return (
     <div>
+      <Link to={"../"}>
+        <button>Back</button>
+      </Link>
       <form onSubmit={onSubmitHandler}>
         <input
           id="Id"
@@ -37,7 +39,7 @@ const LoginModal = (props) => {
           id="Password"
           value={password}
           onChange={PasswordHanlder}
-          placeholder="비밀ad번호를 입력해 주세요."
+          placeholder="비밀번호를 입력해 주세요."
         />
         <button>로그인</button>
       </form>
