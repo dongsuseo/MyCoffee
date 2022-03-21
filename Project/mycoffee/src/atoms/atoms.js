@@ -10,7 +10,7 @@ export const PasswordState = atom({
 });
 export const LogInState = atom({
   key: "LogInState",
-  default: false,
+  default: [],
 });
 
 const atoms = () => {

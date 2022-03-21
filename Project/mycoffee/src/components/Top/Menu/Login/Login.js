@@ -9,18 +9,13 @@ const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(LogInState);
   const [isClicked, setIsClicked] = useState(false);
 
-  // const LogInClickHandler = () => {
-  //   setLogin((prev) => !prev);
-  // };
-  const ClickHandler = () => {
-    setIsClicked((prev) => !prev);
-  };
+
   const Email = useRecoilValue(EmailState);
 
   console.log(isLoggedIn);
 
-  const ClickedHandler =  (click)=>{
-    setIsClicked(click);
+  const logOutHandler= ()=>{
+    setIsLoggedIn(false);
   }
 
   return (
@@ -28,7 +23,7 @@ const Login = () => {
       {isLoggedIn ? (
         <div>
           {`${Email}(님)..`}
-          <button onClick={setIsLoggedIn(false)}>LogOut</button>
+          <button onClick={logOutHandler}>LogOut</button>
         </div>
       ) : (
         <Link to={"/login"}>
