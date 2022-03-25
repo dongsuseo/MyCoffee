@@ -2,7 +2,7 @@ import styles from "./Title.module.css"
 
 const Title = () => {
   return(
-      <div>MyCoffee</div>
+      <div className={styles.text}>MyCoffee</div>
   );
 };
 

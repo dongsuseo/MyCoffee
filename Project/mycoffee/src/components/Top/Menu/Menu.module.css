@@ -1,0 +1,12 @@
+.menuIcon{
+    /* height:2rem;
+    width:2rem; */
+    size:3rem;
+    font-size: 2rem;
+    color:black;
+    border: none;
+    background-color: transparent;
+}
+.menuIcon:hover{
+    cursor:pointer;
+}

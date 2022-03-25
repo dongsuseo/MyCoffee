@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {BiUser} from "react-icons/bi";
+import styles from "./Login.module.css";
 
 import Modal from "./LoginModal";
 import {Link} from "react-router-dom";
@@ -24,8 +25,8 @@ const Login = () => {
       {isLoggedIn ? (
         <div>
           <Link to={"/login"}>
-            <button>
-              <BiUser />
+            <button className={styles.loginButton}>
+              <BiUser className={styles.loginIcon} />
             </button>
           </Link>
           {`${Email}(님)..`}
@@ -33,8 +34,8 @@ const Login = () => {
         </div>
       ) : (
         <Link to={"/login"}>
-          <button>
-            <BiUser />
+          <button className={styles.loginButton}>
+            <BiUser className={styles.loginIcon}/>
           </button>
         </Link>
       )}

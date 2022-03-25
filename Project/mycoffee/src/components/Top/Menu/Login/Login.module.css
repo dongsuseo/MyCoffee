@@ -1,0 +1,12 @@
+.loginButton{
+    background-color: transparent;
+    border:none;
+}
+
+.loginIcon{
+    height:3rem;
+    width:3rem;
+}
+.loginButton:hover{
+    cursor: pointer;
+}

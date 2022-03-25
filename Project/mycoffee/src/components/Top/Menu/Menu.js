@@ -1,6 +1,12 @@
+import {AiOutlineMenu} from "react-icons/ai";
+
+import styles from "./Menu.module.css"
+
 const Menu = () => {
   return (
-    <div>Menu</div>
+    <div><button className={styles.menuIcon}>
+      <AiOutlineMenu/>
+      </button></div>
   );
 };
 
