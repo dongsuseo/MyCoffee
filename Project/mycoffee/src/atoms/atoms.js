@@ -12,6 +12,10 @@ export const LogInState = atom({
   key: "LogInState",
   default: [],
 });
+export const isClickedSideBarState = atom({
+  key: "isClickedSideBarState",
+  default: false,
+})
 
 const atoms = () => {
 };

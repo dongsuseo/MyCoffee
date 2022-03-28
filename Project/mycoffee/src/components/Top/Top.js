@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import styles from "./Top.module.css";
-import Login from "./Menu/Login/Login";
+import Login from "./Login/Login";
 import Title from "./Title";
 import Menu from "./Menu/Menu";
 

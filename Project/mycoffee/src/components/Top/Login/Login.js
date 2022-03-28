@@ -5,7 +5,7 @@ import styles from "./Login.module.css";
 
 import Modal from "./LoginModal";
 import {Link} from "react-router-dom";
-import { EmailState, LogInState } from "../../../../atoms/atoms";
+import { EmailState, LogInState } from "../../../atoms/atoms";
 
 const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(LogInState);
