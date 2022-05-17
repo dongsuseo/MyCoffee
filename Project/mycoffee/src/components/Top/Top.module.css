@@ -1,0 +1,16 @@
+.top{
+    border: 1px solid black;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.title{
+    flex-grow:14;
+}
+.login{
+    margin-left:50%;
+    flex-grow:1;
+}
+.menu{
+    flex-grow:1;
+}

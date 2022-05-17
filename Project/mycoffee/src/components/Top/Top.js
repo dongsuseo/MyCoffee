@@ -1,17 +1,24 @@
 import React, {useState} from "react";
 
-import Login from "./Menu/Login/Login";
+import styles from "./Top.module.css";
+import Login from "./Login/Login";
 import Title from "./Title";
 import Menu from "./Menu/Menu";
 
 const Top = () => {
   
-  return(
-      <div>
-          <Title></Title>
-          <Login></Login>
-          <Menu></Menu>
+  return (
+    <div className={styles.top}>
+      <div className={styles.title}>
+        <Title />
       </div>
+      <div className={styles.login}>
+        <Login />
+      </div>
+      <div className={styles.menu}>
+        <Menu />
+      </div>
+    </div>
   );
 };
 
