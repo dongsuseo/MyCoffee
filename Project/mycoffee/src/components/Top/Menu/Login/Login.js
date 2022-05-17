@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
-import Modal from "./LoginModal";
 import {Link} from "react-router-dom";
 import { EmailState, LogInState } from "../../../../atoms/atoms";
 
 const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(LogInState);
-  const [isClicked, setIsClicked] = useState(false);
-
 
   const Email = useRecoilValue(EmailState);
 
   console.log(isLoggedIn);
-
+  console.log(Email);
   const logOutHandler= ()=>{
     setIsLoggedIn(false);
   }

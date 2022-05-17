@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import Top from "../../Top";
 import {useRecoilState, atom} from 'recoil';
 import{EmailState,PasswordState,LogInState} from '../../../../atoms/atoms'
 import {Link} from "react-router-dom";
@@ -25,6 +26,7 @@ const LoginModal = () => {
 
   return (
     <div>
+      <Top/>
       <Link to={"../"}>
         <button>Back</button>
       </Link>
